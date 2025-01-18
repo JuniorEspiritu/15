@@ -1,34 +1,133 @@
-<!DOCTYPE html>
-<html lang="es">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', cursive;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/flowers.png" type="image/x-icon">
-    <title>Flowers</title>
-</head>
+/* Aseguramos que el fondo de la primera página sea negro */
+body {
+    background-color: black;
+    color: azure;
+}
 
-<body>
-    <!-- Contenedor con las flores en movimiento -->
-    <div class="flowers-container">
-        <!-- Texto sobre las flores -->
-        <div class="content">
-            <div class="greetings">
-                <span>H</span><span>o</span><span>l</span><span>a</span>
-            </div>
-            <div class="greetings">
-                <span>M</span><span>i</span>
-            </div>
-            <div class="greetings">
-                <span>B</span><span>o</span><span>n</span><span>i</span><span>t</span><span>a</span>
-            </div>
-            <div class="description">
-                <span>detalle <a href="flower.html" style="color: #fff;">CLICK AQUÍ</a></span>
-            </div>
-        </div>
-    </div>
-</body>
+/* Contenedor de las flores en movimiento (background) */
+.flowers-container {
+    width: 100%;
+    height: 100vh;
+    background: url('img/flowers.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
 
-</html>
+/* Contenedor del texto sobre las flores */
+.content {
+    position: relative;
+    z-index: 2; /* Hace que el texto esté encima de la imagen de las flores */
+    text-align: center;
+}
+
+/* Estilo y animación para las letras */
+.greetings {
+    font-size: 7rem;
+    font-weight: 900;
+}
+
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+/* Configuración de animación para las letras */
+.greetings > span:nth-child(2) {
+    animation-delay: .2s;
+}
+.greetings > span:nth-child(3) {
+    animation-delay: .4s;
+}
+.greetings > span:nth-child(4) {
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5) {
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6) {
+    animation-delay: 1s;
+}
+.greetings > span:nth-child(7) {
+    animation-delay: 1.2s;
+}
+.greetings > span:nth-child(8) {
+    animation-delay: 1.4s;
+}
+.greetings > span:nth-child(9) {
+    animation-delay: 1.6s;
+}
+.greetings > span:nth-child(10) {
+    animation-delay: 1.8s;
+}
+.greetings > span:nth-child(11) {
+    animation-delay: 2s;
+}
+.greetings > span:nth-child(12) {
+    animation-delay: 2.2s;
+}
+.greetings > span:nth-child(13) {
+    animation-delay: 2.4s;
+}
+.greetings > span:nth-child(14) {
+    animation-delay: 2.6s;
+}
+.greetings > span:nth-child(15) {
+    animation-delay: 2.8s;
+}
+
+/* Estilo del enlace */
+.description {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #28a745;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #218838;
+}
+
+/* Responsividad */
+@media screen and (max-width: 574px) {
+    .greetings {
+        display: block;
+        font-size: 4rem;
+        font-weight: 800;
+    }
+
+    .description {
+        font-size: 2rem;
+    }
+
+    .button a {
+        font-size: 1rem;
+    }
+}
